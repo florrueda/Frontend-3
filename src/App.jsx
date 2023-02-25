@@ -1,11 +1,12 @@
 import './App.css'
-import Productos from './Productos'
+// import Productos from './Productos'
+import ProductosList from './ProductosList'
 // import {useState} from 'react'
 // import CustomCss from './CustomCss'
 // import Home from './home'
 // import Inmutable from './Inmutable'
 
-const disciplinas = [ "Banco de datos", "Frontend", "Backend", "Metodologias agiles", "Infraestructura"]
+// const disciplinas = [ "Banco de datos", "Frontend", "Backend", "Metodologias agiles", "Infraestructura"]
 
 function App() {
 
@@ -39,7 +40,8 @@ function App() {
       <CustomCss></CustomCss>
       <Home isDark={isDark}></Home>
       <button onClick={cambiarModo}>Cambiar modo</button> */}
-      <Productos></Productos>
+      {/* <Productos></Productos> */}
+      <ProductosList></ProductosList>
     </div>
   )
 }
