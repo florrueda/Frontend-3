@@ -1,32 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import Productos from './Productos'
+// import {useState} from 'react'
+// import CustomCss from './CustomCss'
+// import Home from './home'
+// import Inmutable from './Inmutable'
+
+const disciplinas = [ "Banco de datos", "Frontend", "Backend", "Metodologias agiles", "Infraestructura"]
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  // const [modo, setModo] = useState("light");
+  // const [isDark, setIsDark] = useState(true)
+
+  // const cambiarModoOscuro =() => {
+  //   setModo("dark")
+  // }
+
+  // const cambiarModo =() => {
+  //   setIsDark(!isDark)
+  // }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    {/* <h2>Lista sin map</h2>
+      <ul>
+        <li>{disciplinas[0]}</li>
+        <li>{disciplinas[1]}</li>
+        <li>{disciplinas[2]}</li>
+        <li>{disciplinas[3]}</li>
+        <li>{disciplinas[4]}</li>
+      </ul>
+      <h2>Lista con map</h2>
+      <ul>
+        {disciplinas.map( (element, index) => <li key={index}>{element}</li> )}
+      </ul> */}
+{/* 
+      <Inmutable></Inmutable>
+      <CustomCss></CustomCss>
+      <Home isDark={isDark}></Home>
+      <button onClick={cambiarModo}>Cambiar modo</button> */}
+      <Productos></Productos>
     </div>
   )
 }
