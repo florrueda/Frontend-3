@@ -1,47 +1,27 @@
 import './App.css'
-// import Productos from './Productos'
-import ProductosList from './ProductosList'
-// import {useState} from 'react'
-// import CustomCss from './CustomCss'
-// import Home from './home'
-// import Inmutable from './Inmutable'
+import {useState} from 'react'
 
-// const disciplinas = [ "Banco de datos", "Frontend", "Backend", "Metodologias agiles", "Infraestructura"]
 
 function App() {
 
-  // const [modo, setModo] = useState("light");
-  // const [isDark, setIsDark] = useState(true)
+  // const [likes, setLikes] = useState(0);
 
-  // const cambiarModoOscuro =() => {
-  //   setModo("dark")
-  // }
+  const [state, setState] = useState({
+    likes: 0,
+    vistas: 0
+    });
 
-  // const cambiarModo =() => {
-  //   setIsDark(!isDark)
-  // }
 
   return (
     <div className="App">
-    {/* <h2>Lista sin map</h2>
-      <ul>
-        <li>{disciplinas[0]}</li>
-        <li>{disciplinas[1]}</li>
-        <li>{disciplinas[2]}</li>
-        <li>{disciplinas[3]}</li>
-        <li>{disciplinas[4]}</li>
-      </ul>
-      <h2>Lista con map</h2>
-      <ul>
-        {disciplinas.map( (element, index) => <li key={index}>{element}</li> )}
-      </ul> */}
-{/* 
-      <Inmutable></Inmutable>
-      <CustomCss></CustomCss>
-      <Home isDark={isDark}></Home>
-      <button onClick={cambiarModo}>Cambiar modo</button> */}
-      {/* <Productos></Productos> */}
-      <ProductosList></ProductosList>
+      {/* <h1>Primer ejemplo</h1>
+      <h2>Tus likes son: {likes}</h2>
+      <button onClick={ ()=> setLikes(likes+1) }>Aumentar likes</button> */}
+
+      <h1>Segundo ejemplo</h1>
+      <h2>Tus likes son:{state.likes}</h2>
+      <h2>Tus vistas son: {state.vistas}</h2>
+      <button onClick={ ()=> setState(prev => ({...prev, likes: likes+1, vistas: vistas+1}))}>Aumentar likes</button>
     </div>
   )
 }
