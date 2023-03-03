@@ -1,16 +1,13 @@
 import './App.css'
-import ItemsList from './Components/ItemsList/ItemsList'
-import ItemsListMesa from './Components/MesaTrabajo/ItemsLists'
-// import EjemploState from './assets/EjemploState'
-
+import Form from './Components/form/Form'
+import FormMesaTrabajo from './Components/mesaTrabajo/formMesaTrabajo'
 
 function App() {
 
   return (
     <div className="App">
-      {/* <EjemploState></EjemploState> */}
-      {/* <ItemsList></ItemsList> */}
-      <ItemsListMesa></ItemsListMesa>
+      {/* <Form></Form> */}
+      <FormMesaTrabajo></FormMesaTrabajo>
     </div>
   )
 }
