@@ -1,48 +1,27 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Products from "./Products";
+import Home from "../Home/Home";
 
 const ProductsContainer = () => {
   const [items, setItems] = useState([]);
 
-  const [newProduct, setNewProduct] = useState({
-    name: "",
-    price: "",
-    img: "",
-  });
 
-  const [isCreated, setIsCreated] = useState(false);
-  const [isDeleted, setIsDeleted] = useState(false);
-  const [isUpdated, setIsUpdated] = useState(false);
+  const [isChanged,setIsChanged] = useState(false)
 
   useEffect(() => {
-    setIsCreated(false);
-    setIsDeleted(false);
-    setIsUpdated(false);
+    setIsChanged(false);
     const productos = axios.get("http://localhost:5000/products");
     productos
       .then((res) => setItems(res.data))
       .catch((err) => console.log(err));
-  }, [isCreated, isDeleted, isUpdated]);
+  }, [isChanged]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let data = {
-      name: newProduct.name,
-      price: Number(newProduct.price),
-      img: newProduct.img,
-    };
-    axios.post("http://localhost:5000/products", data);
-    setIsCreated(true);
-  };
-
-  const handleChange = (e) => {
-    setNewProduct({ ...newProduct, [e.target.name]: e.target.value });
-  };
+  
 
   const deleteProductById = (id) => {
     axios.delete(`http://localhost:5000/products/${id}`);
-    setIsDeleted(true);
+    setIsChanged(true);
   };
 
   const updateProductById = (id) => {
@@ -50,17 +29,18 @@ const ProductsContainer = () => {
       price: 6000,
       name: "zapas X",
     });
-    setIsUpdated(true);
+    setIsChanged(true);
   };
 
   return (
+    <div>
     <Products
       updateProductById={updateProductById}
       deleteProductById={deleteProductById}
-      handleChange={handleChange}
-      handleSubmit={handleSubmit}
       items={items}
     ></Products>
+    </div>
+    
   );
 };
 

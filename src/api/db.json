@@ -28,19 +28,22 @@
       "img": "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430165/images_lujpmr.jpg"
     },
     {
-      "id": 4,
-      "name": "Jaguar",
-      "price": 17800,
-      "stock": 7,
-      "description": "Zapatillas de ultima generacion para el deporte",
-      "category": "urbanas",
-      "img": "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430220/rtokwmt3j03bblbfhwhb.jpg"
-    },
-    {
       "name": "zapas X",
       "price": 6000,
-      "img": "holajordan",
+      "img": "https://static.nike.com/a/images/f_auto,cs_srgb/w_1920,c_limit/89c121fc-3d07-4de0-aef6-bcc9c2764a2c/air-jordan-1-2022-lost-and-found-chicago-la-inspiraci%C3%B3n-detr%C3%A1s-del-dise%C3%B1o.jpg",
       "id": 5
+    },
+    {
+      "name": "jordan",
+      "price": 500,
+      "img": "https://static.nike.com/a/images/f_auto,cs_srgb/w_1920,c_limit/89c121fc-3d07-4de0-aef6-bcc9c2764a2c/air-jordan-1-2022-lost-and-found-chicago-la-inspiraci%C3%B3n-detr%C3%A1s-del-dise%C3%B1o.jpg",
+      "id": 6
+    },
+    {
+      "name": "converse",
+      "price": 80000,
+      "img": "https://cdn.shopify.com/s/files/1/0594/7506/7048/products/166800C_0.jpg?v=1679414291",
+      "id": 7
     }
   ]
 }
