@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Products from "./Products";
-import Home from "../Home/Home";
 
 const ProductsContainer = () => {
   const [items, setItems] = useState([]);
 
-
-  const [isChanged,setIsChanged] = useState(false)
+  const [isChanged, setIsChanged] = useState(false);
 
   useEffect(() => {
     setIsChanged(false);
@@ -16,8 +14,6 @@ const ProductsContainer = () => {
       .then((res) => setItems(res.data))
       .catch((err) => console.log(err));
   }, [isChanged]);
-
-  
 
   const deleteProductById = (id) => {
     axios.delete(`http://localhost:5000/products/${id}`);
@@ -34,13 +30,12 @@ const ProductsContainer = () => {
 
   return (
     <div>
-    <Products
-      updateProductById={updateProductById}
-      deleteProductById={deleteProductById}
-      items={items}
-    ></Products>
+      <Products
+        updateProductById={updateProductById}
+        deleteProductById={deleteProductById}
+        items={items}
+      ></Products>
     </div>
-    
   );
 };
 

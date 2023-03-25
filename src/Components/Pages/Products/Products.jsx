@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import ProductCard from '../../Common/ProductCard/ProductCard';
 
 const Products = ({updateProductById, deleteProductById, items}) => {
     return (
@@ -10,13 +11,7 @@ const Products = ({updateProductById, deleteProductById, items}) => {
             </Link>
             <h1>Products</h1>
             {items.map(e => (
-                <div key={e.id} style={{border: '2px solid white', display:'flex'}}>
-                    <h2>{e.name}</h2>
-                    <h2>{e.price}</h2>
-                    <img src={e.img} style={{width:'200px', height:'200px'}}></img>
-                    <button onClick={() => deleteProductById(e.id)}>Eliminar producto</button>
-                    <button onClick={() => updateProductById(e.id)}>Editar</button>
-                </div>
+                <ProductCard key={e.id} e={e} updateProductById={updateProductById} deleteProductById={deleteProductById} ></ProductCard>
             ))}
 
             
