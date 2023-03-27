@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
-import CreateProduct from "./CreateProduct";
+import { createProduct } from "../../../services/ProductsService";
+import CreateProduct from './CreateProduct'
 
 const CreateProductContainer = () => {
 
@@ -20,7 +20,9 @@ const CreateProductContainer = () => {
           price: Number(newProduct.price),
           img: newProduct.img,
         };
-        axios.post("http://localhost:5000/products", data);
+
+        const create = createProduct(data);
+        create.then((res) => console.log(res))
         navigate('/products')
       };
     

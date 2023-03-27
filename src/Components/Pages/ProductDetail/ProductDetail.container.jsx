@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ProductDetail from './ProductDetail';
 import {useParams} from 'react-router-dom'
-import axios from 'axios';
+import { getProductById } from "../../../services/ProductsService";
 
 const ProductDetailContainer = () => {
 
@@ -9,7 +9,7 @@ const ProductDetailContainer = () => {
     const [product, setProduct] = useState({})
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/products/${id}`)
+        getProductById(id)
         .then(res => setProduct(res.data))
     }, []);
 
