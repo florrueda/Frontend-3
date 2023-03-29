@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from '../../Common/Counter/Counter';
 
 const ProductDetail = ({product}) => {
     return (
@@ -10,6 +11,9 @@ const ProductDetail = ({product}) => {
                     <img src={product.img} style={{width:'200px', height:'200px'}}></img>
                     <p>{product.description}</p>
                 </div>
+
+            <Counter product={product} />
+            
         </div>
     );
 }
