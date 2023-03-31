@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
-import { CartContext } from "../../../Context/CartContext";
+import React, { useContext, useEffect } from "react";
+import { CartContextReducer } from "../../../Context/CartContextReducer";
 
 const CartContainer = () => {
-  const { cart, clearCart, getTotalPrice } = useContext(CartContext);
+  const { state, dispatch } = useContext(CartContextReducer);
+
+  useEffect(()=> {
+    dispatch({type:'GET_TOTAL_PRICE'})
+  },[])
 
   return (
     <div>
       <h1>Estoy en el carrito</h1>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        {/* <div style={{ display: "flex", justifyContent: "center" }}>
           {cart.map((product) => (
             <div
               key={product.id}
@@ -23,10 +27,10 @@ const CartContainer = () => {
               <img src={product.img} style={{ width: "50%" }}></img>
             </div>
           ))}
-        </div>
+        </div> */}
         <div>
-            <h3>El total del carrito es: {getTotalPrice()}</h3>
-            <button onClick={clearCart}>Vaciar carrito</button>
+            <h3>El total del carrito es:{state.totalPrice}</h3>
+            <button onClick={()=> dispatch({type: 'CLEAR_CART'})}>Vaciar carrito</button>
         </div>
       </div>
     </div>
