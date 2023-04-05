@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
-import Navbar from './Navbar/Navbar';
 import { Outlet } from "react-router-dom";
 import { CartContextReducer } from '../../Context/CartContextReducer';
+import NavbarMaterial from './Navbar/NavbarMaterial';
 
 const Layout = () => {
     const { state, dispatch } = useContext(CartContextReducer);
@@ -12,7 +12,7 @@ const Layout = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
+            <NavbarMaterial></NavbarMaterial>
             <h3>{state.totalQuantity}</h3>
             <Outlet></Outlet>
             <h1>Footer</h1>

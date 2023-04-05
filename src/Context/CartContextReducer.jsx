@@ -39,6 +39,9 @@ function reducer(state, action) {
                 return acc + element.quantity
             }, 0)
             return {...state, totalQuantity: totalQuantity}
+        case "DELETE_BY_ID":
+            let arrFiltrado = state.cart.filter(element => element.id !== action.payload)
+            return {...state, cart:arrFiltrado}
         default:
             return state;
     }
