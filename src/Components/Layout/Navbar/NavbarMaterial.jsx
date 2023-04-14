@@ -15,8 +15,6 @@ import StoreIcon from '@mui/icons-material/Store';
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Toolbar from "@mui/material/Toolbar";
 import { Avatar } from "@mui/material";
-import LogoutIcon from "@mui/icons-material/Logout";
-import { Outlet } from "react-router-dom";
 import {useNavigate} from 'react-router-dom'
 
 const drawerWidth = 200;
@@ -146,12 +144,11 @@ const NavbarMaterial = (props) => {
           flexGrow: 1,
           py: 4,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          minHeight: "100vh",
+          // minHeight: "100vh",
           // marginBottom: "50px"
         }}
       >
         <Toolbar />
-        <Outlet />
       </Box>
     </Box>
   );

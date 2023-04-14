@@ -13,7 +13,7 @@ const Layout = () => {
     return (
         <div>
             <NavbarMaterial></NavbarMaterial>
-            <h3>{state.totalQuantity}</h3>
+            <h3>Cantidad {state.totalQuantity}</h3>
             <Outlet></Outlet>
             <h1>Footer</h1>
         </div>
