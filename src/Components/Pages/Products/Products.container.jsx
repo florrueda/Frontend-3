@@ -1,23 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { getProducts, deleteProduct, updateProduct } from "../../../services/ProductsService";
 import Products from "./Products";
+import { db } from "../../../firebaseConfig";
+import { getDocs, collection } from 'firebase/firestore'
+
 
 const ProductsContainer = () => {
   const [items, setItems] = useState([]);
 
-  const [isChanged, setIsChanged] = useState(false);
-
   useEffect(() => {
-    setIsChanged(false);
-    const productos = getProducts();
-    productos
-      .then((res) => setItems(res.data))
-      .catch((err) => console.log(err));
-  }, [isChanged]);
+    let refCollection = collection(db, "products")
+    getDocs(refCollection)
+    .then((res) => {
+      const products = res.docs.map(product => {
+        console.log(product);
+        return {
+          ...product.data(),
+          id: product.id
+        }
+      })
+      setItems(products);
+    })
+  }, []);
 
   const deleteProductById = (id) => {
     deleteProduct(id);
-    setIsChanged(true);
   };
 
   const updateProductById = (id) => {
@@ -25,7 +32,6 @@ const ProductsContainer = () => {
       price: 6000,
       name: "zapas X",
     })
-    setIsChanged(true);
   };
 
   return (
